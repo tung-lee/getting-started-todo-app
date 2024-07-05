@@ -31,7 +31,7 @@ cd getting-started-todo-app
       - AWS_SECRET_ACCESS_KEY=hSYXtvXXXXXXXO/k39FGt3u078pYWsh
       - AWS_REGION=us-east-1
       - S3_BUCKET_NAME=localbuckett
-    networks:
+   networks:
       - localnet
 ```
 
