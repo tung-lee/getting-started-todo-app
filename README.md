@@ -24,8 +24,8 @@ Object Storage: Localstack (for emulating S3 and storing images locally for test
 1. **Clone the repository:**
 
 ```sh
-git clone https://github.com/ajeetraina/todo-list-local-cloud/
-cd todo-list-local-cloud
+git clone https://github.com/dockersamples/getting-started-todo-app
+cd getting-started-todo-app
 ```
 
 
