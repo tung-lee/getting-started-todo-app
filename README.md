@@ -17,6 +17,7 @@ Object Storage: Localstack (for emulating S3 and storing images locally for test
 
 - Docker Desktop
 - JWT Secret
+- awscli installed
 
 
 ## Installation
