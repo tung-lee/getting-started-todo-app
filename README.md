@@ -35,7 +35,7 @@ cd getting-started-todo-app
  docker compose up -d
 ```
 
-<img width="1162" alt="image" src="https://github.com/ajeetraina/todo-list-local-cloud/assets/313480/839b5784-0300-4674-898d-dba0ea70e74e">
+<img width="1151" alt="image" src="https://github.com/dockersamples/getting-started-todo-app/assets/313480/c81c8e3b-847a-4a93-a960-8d01960d7b4c">
 
 
 
