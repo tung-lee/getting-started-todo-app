@@ -35,7 +35,7 @@ cd getting-started-todo-app
       - localnet
 ```
 
-3 **Bring up the services
+3. **Bring up the services:**
 
 ```
 docker compose up -d
