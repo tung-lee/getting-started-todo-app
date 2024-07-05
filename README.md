@@ -11,6 +11,7 @@ This full-stack Todo application was built with React, Node.js, Express, Mongo a
 ## Prerequisites
 
 - Docker Desktop
+- [Create a S3 bucket and configure IAM](s3.md)
 
 ## Installation
 
