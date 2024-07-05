@@ -1,39 +1,22 @@
 # A todo-List App using Docker and Localstack
 
-This full-stack Todo application was built with React, Node.js, Express, and MongoDB. The application allows users to register, log in, create, update, delete, and filter their to-do tasks. It also supports image and file uploads to Localstack emulated S3.
+This full-stack Todo application was built with React, Node.js, Express, Mongo and Localstack(S3 emulated).
 
-![image](https://github.com/ajeetraina/todo-list-local-cloud/assets/313480/7e4bc7ea-e06c-4ffb-92ba-cd6bbce28b22)
+## Tech Stack
 
-
-
-## Table of Contents
-
-- [Architecture](#architecture)
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Running the Application](#running-the-application)
+![image](https://github.com/dockersamples/getting-started-todo-app/assets/313480/a8dc1a00-24b8-4d04-9252-e90c9e359dbd)
 
 
-## Architecture
+Frontend: React, Material UI.
+Backend: Node.js, Express
+Database: Mongo(running locally for storing tasks)
+Object Storage: Localstack (for emulating S3 and storing images locally for testing purpose)
 
-The application is divided into two main parts:
-
-- **Client**: Built with React, Material UI, and React Router.
-- **Server**: Built with Node.js, Express, MongoDB, and AWS.
-
-## Features
-
-- User authentication (register and login)
-- Create, update, delete, and view todos
-- Filter todos by tags
-- Upload images and files to AWS S3
-- Download the attachment of todos
-- Protected routes for authenticated users
 
 ## Prerequisites
 
 - Docker Desktop
+- JWT Secret
 
 
 ## Installation
