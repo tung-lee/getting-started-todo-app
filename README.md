@@ -8,8 +8,10 @@ This full-stack Todo application was built with React, Node.js, Express, Mongo a
 
 
 
-- **Client**: React, Material UI, and React Router.
-- **Server**: Node.js, Express, MongoDB, and AWS.
+- **Frontend**: React, Material UI.
+- **Backend**: Node.js, Express
+- **Database**: Mongo(Atlas or running locally for storing tasks)
+- **Object Storage**: AWS S3(for storing images)
 
 ## Prerequisites
 
