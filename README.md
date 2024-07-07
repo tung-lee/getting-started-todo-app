@@ -32,6 +32,14 @@ cd getting-started-todo-app
 
 2. **Bringing up services:**
 
+Switch to container-supported branch before you run the following command:
+
+```
+git checkout container-supported
+```
+
+
+
 ```
  docker compose up -d
 ```
