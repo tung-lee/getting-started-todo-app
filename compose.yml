@@ -1,7 +1,7 @@
 
 services:
   server:
-    image: dockerdevrel/wad-todo-backend
+    image: dockerdevrel/wad-todo-backend:v1.0
     ports:
       - 5000:5000
     environment:
@@ -16,7 +16,7 @@ services:
 
 
   client:
-    image: dockerdevrel/wad-todo-frontend
+    image: dockerdevrel/wad-todo-frontend:v1.0
     ports:
       - 3000:3000
     depends_on:
