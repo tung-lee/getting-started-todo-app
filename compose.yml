@@ -1,9 +1,7 @@
 
 services:
   server:
-    build:
-      context: ./server
-      dockerfile: Dockerfile
+    image: dockerdevrel/wad-todo-backend
     ports:
       - 5000:5000
     environment:
@@ -18,9 +16,7 @@ services:
 
 
   client:
-    build:
-      context: ./client
-      dockerfile: Dockerfile
+    image: dockerdevrel/wad-todo-frontend
     ports:
       - 3000:3000
     depends_on:
