@@ -1,0 +1,23 @@
+# Stage 1: Build environment for installing dependencies
+FROM node:18 AS builder
+
+WORKDIR /app
+
+# Copy package*.json (Optional)
+COPY package*.json ./
+
+RUN npm install
+
+# Stage 2: Slimmed down runtime image
+FROM node:18-slim
+
+WORKDIR /app
+
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package*.json ./
+
+# Optional: Copy other application files if needed
+COPY . .
+
+EXPOSE 5000
+CMD ["npm", "start"]
