@@ -1,22 +1,16 @@
 
 services:
   server:
-    image: dockerdevrel/wad-todo-backend:v1.0
+    image: backend
     ports:
       - 5000:5000
-    environment:
-      - MONGODB_URI=mongodb://mongodb:27017/todo-app
-      - JWT_SECRET=603b31XXXXXXX90d3b8cb62f0a585fd70a5ee0b4d
-      - AWS_ACCESS_KEY_ID=AKIAXXXXXDDDX
-      - AWS_SECRET_ACCESS_KEY=hSYXtvXXXXXXXO/k39FGt3u078pYWsh
-      - AWS_REGION=us-east-1
-      - S3_BUCKET_NAME=localbuckett
+    env_file: .env 
     networks:
       - localnet
 
 
   client:
-    image: dockerdevrel/wad-todo-frontend:v1.0
+    image: frontend
     ports:
       - 3000:3000
     depends_on:
