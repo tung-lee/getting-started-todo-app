@@ -4,7 +4,8 @@ This full-stack Todo application was built with React, Node.js, Express, Mongo a
 
 ## Tech Stack
 
-![image](https://github.com/dockersamples/getting-started-todo-app/assets/313480/a8dc1a00-24b8-4d04-9252-e90c9e359dbd)
+
+![image](https://github.com/dockersamples/getting-started-todo-app/assets/313480/9a1e66fd-eefa-44e0-9501-1c5ba9413187)
 
 
 Frontend: React, Material UI.
