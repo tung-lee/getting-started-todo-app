@@ -4,7 +4,7 @@ This full-stack Todo application was built with React, Node.js, Express, Mongo a
 
 ## Tech Stack
 
-![image](https://github.com/dockersamples/getting-started-todo-app/assets/313480/a1416188-1fc4-4210-a750-22dc80518439)
+![image](https://github.com/dockersamples/getting-started-todo-app/assets/313480/9c20ffcb-543e-4e42-8ebc-2b27c9b69902)
 
 
 
