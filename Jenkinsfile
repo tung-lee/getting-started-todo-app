@@ -9,6 +9,12 @@ pipeline {
 		}
 		
 		stage('build') {
+			when {
+				expression {
+					BRANCH_NAME == 'dev'
+				}
+			}
+			
 			steps {
 				echo 'build...'
 			}
@@ -20,7 +26,7 @@ pipeline {
 			}
 		}
 
-		stage('deploy') {
+		stage('deploy') {	
 			steps {
 				echo 'deploy...'
 			}
