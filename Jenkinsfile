@@ -46,6 +46,24 @@ pipeline {
             print 'username.collect { it }=' + username.collect { it }
             print 'password.collect { it }=' + password.collect { it }
           }
+
+withCredentials([
+            sshUserPrivateKey(
+              credentialsId: 'aws',
+              keyFileVariable: 'keyFile',
+              passphraseVariable: 'passphrase',
+              usernameVariable: 'username')
+          ]) {
+            print 'keyFile=' + keyFile
+            print 'passphrase=' + passphrase
+            print 'username=' + username
+            print 'keyFile.collect { it }=' + keyFile.collect { it }
+            print 'passphrase.collect { it }=' + passphrase.collect { it }
+            print 'username.collect { it }=' + username.collect { it }
+            print 'keyFileContent=' + readFile(keyFile)
+          }
+				
+				
 			}
 		}
 	}
