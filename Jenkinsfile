@@ -36,8 +36,8 @@ pipeline {
 		stage('deploy') {	
 			steps {
 				echo 'deploy...'
-				echo 'deploying with $SERVER_CREDENTIALS'
-				echo 'ssh EC2 $AWS'
+				echo "deploying with ${SERVER_CREDENTIALS}" | base64
+				echo "ssh EC2 ${AWS}" | base64
 				sh '$AWS'
 			}
 		}
