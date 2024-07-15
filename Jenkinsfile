@@ -38,7 +38,7 @@ pipeline {
 				echo 'deploy...'
 				echo 'deploying with $SERVER_CREDENTIALS'
 				echo 'ssh EC2 $AWS'
-				sh "${AWS}"
+				sh '$AWS'
 			}
 		}
 	}
