@@ -1,3 +1,5 @@
+def gv
+
 pipeline {
 	agent any
 
@@ -13,6 +15,14 @@ pipeline {
 	}
 
 	stages {
+		stage("init") {
+	steps {
+		script {
+			gv = load "script.grovy"
+		}
+	}
+}
+		
 		stage('webhook') {
 			steps {
 				echo 'webhook...'
@@ -27,15 +37,17 @@ pipeline {
 			}
 			
 			steps {
-				echo 'build...'
+				script {
+					gv.buildApp()
+				}
 			}
 		}
 
 		stage('test') {
 			steps {
-				echo 'test...'
-				echo "test version ${NEW_VERSION}"
-				echo "${params.VERSION}"
+				script {
+					gv.testApp()
+				}
 			}
 		}
 
