@@ -36,9 +36,16 @@ pipeline {
 		stage('deploy') {	
 			steps {
 				echo 'deploy...'
-				echo "deploying with ${SERVER_CREDENTIALS}" | base64
-				echo "ssh EC2 ${AWS}" | base64
-				sh '$AWS'
+				withCredentials([
+            usernamePassword(credentialsId: 'server-credentials',
+              usernameVariable: 'username',
+              passwordVariable: 'password')
+          ]) {
+            print 'username=' + username + 'password=' + password
+
+            print 'username.collect { it }=' + username.collect { it }
+            print 'password.collect { it }=' + password.collect { it }
+          }
 			}
 		}
 	}
