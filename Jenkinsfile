@@ -1,5 +1,5 @@
 pipeline {
-    agent none  // We'll define the agent in each stage
+    agent none
 
     stages {
         stage('info') {
@@ -10,10 +10,12 @@ pipeline {
             }
             steps {
                 script {
-                    echo "Current branch: ${env.GIT_BRANCH}"
-                    sh(script: """ whoami;pwd;ls -la """, label: "first stage")
+                    try {
+                        echo "Current branch: ${env.BRANCH_NAME}"
+                        sh(script: "whoami && pwd && ls -la", label: "Environment Info")
+                    } catch (Exception e) {
+                    }
                 }
             }
         }
-    }
 }
