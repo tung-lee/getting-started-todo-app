@@ -5,11 +5,14 @@ pipeline {
         stage('info') {
             agent {
                 node {
-                    label "${BRANCH_NAME == 'main' ? 'production-server' : BRANCH_NAME == 'dev' ? 'test-dev-battle-server' : 'default-agent'}"
+                    label "${env.GIT_BRANCH == 'origin/main' ? 'production-server' : env.GIT_BRANCH == 'origin/dev' ? 'test-dev-battle-server' : 'default-agent'}"
                 }
             }
             steps {
-                sh(script: """ whoami;pwd;ls -la """, label: "first stage")
+                script {
+                    echo "Current branch: ${env.GIT_BRANCH}"
+                    sh(script: """ whoami;pwd;ls -la """, label: "first stage")
+                }
             }
         }
     }
