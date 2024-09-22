@@ -1,4 +1,4 @@
-def USED_LABEL = env.GIT_BRANCH == 'origin/main' ? 'production-server' : env.GIT_BRANCH == 'origin/dev' ? 'test-dev-battle-server' : 'default-agent'
+def USED_LABEL = env.GIT_BRANCH == 'main' ? 'production-server' : env.GIT_BRANCH == 'dev' ? 'test-dev-battle-server' : 'default-agent'
 
 pipeline {
     agent none
