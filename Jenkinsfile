@@ -3,17 +3,7 @@ pipeline {
     stages {
         stage('info') {
             agent {
-                node {
-                    label {
-                        if (env.BRANCH_NAME == 'main') {
-                            return 'production-server'
-                        } else if (env.BRANCH_NAME == 'dev') {
-                            return 'test-dev-battle-server'
-                        } else {
-                            return 'default-agent'
-                        }
-                    }
-                }
+                label "${env.BRANCH_NAME == 'main' ? 'production-server' : env.BRANCH_NAME == 'dev' ? 'test-dev-battle-server' : 'default-agent'}"
             }
             steps {
                 script {
