@@ -24,7 +24,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        sh("docker ps -a")
+                        echo "Test only"
                     } catch (Exception e) {
                         echo "An error occurred: ${e.message}"
                     }
