@@ -1,16 +1,14 @@
-def USED_LABEL = env.GIT_BRANCH == 'main' ? 'production-server' : env.GIT_BRANCH == 'dev' ? 'test-dev-battle-server' : 'default-agent'
-
 pipeline {
-    agent none
+    agent {
+        label 'test-dev-battle-server'
+    }
     stages {
         stage('info') {
-            agent {
-                label USED_LABEL
-            }
             steps {
                 script {
                     try {
                         echo "Current branch: ${env.GIT_BRANCH}"
+                        echo "Current branch: ${env.BRANCH_NAME}"
                         echo "Selected agent: ${env.NODE_NAME}"
                         sh(script: "whoami && pwd && ls -la", label: "Environment Info")
                     } catch (Exception e) {
