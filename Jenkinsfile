@@ -1,7 +1,9 @@
 pipeline {
-    label 'test-dev-battle-server'
+    agent {
+        label 'test-dev-battle-server'
+    }
     stages {
-        stage('info-test') {
+        stage('info') {
             steps {
                 sh(""" whoami;pwd;ls -la """, label: "first stage")
             }
