@@ -1,9 +1,10 @@
 pipeline {
-    agent {
-        label 'test-dev-battle-server'
-    }
+    agent none
     stages {
         stage('info') {
+            agent {
+                label "${env.GIT_BRANCH == 'origin/main' ? 'production-server' : env.GIT_BRANCH == 'origin/dev' ? 'test-dev-battle-server' : 'default-agent'}"
+            }
             steps {
                 script {
                     try {
