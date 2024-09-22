@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('info') {
             agent {
-                label "${env.BRANCH_NAME == 'main' ? 'production-server' : env.BRANCH_NAME == 'dev' ? 'test-dev-battle-server' : 'default-agent'}"
+                label "${env.BRANCH_NAME == 'origin/main' ? 'production-server' : env.BRANCH_NAME == 'origin/dev' ? 'test-dev-battle-server' : 'default-agent'}"
             }
             steps {
                 script {
