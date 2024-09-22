@@ -5,7 +5,7 @@ pipeline {
         stage('info') {
             agent {
                 node {
-                    label "${env.GIT_BRANCH == 'origin/main' ? 'production-server' : env.GIT_BRANCH == 'origin/dev' ? 'test-dev-battle-server' : 'default-agent'}"
+                    label "${env.BRANCH_NAME == 'main' ? 'production-server' : env.BRANCH_NAME == 'dev' ? 'test-dev-battle-server' : 'default-agent'}"
                 }
             }
             steps {
