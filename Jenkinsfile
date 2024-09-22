@@ -3,12 +3,13 @@ pipeline {
         label 'test-dev-battle-server'
     }
     stages {
-        stage('info') {
+        stage('choose agent') {
             steps {
                 script {
                     try {
                         echo "Current branch: ${env.GIT_BRANCH}"
-                        echo "Current agent: ${env.GIT_BRANCH == 'origin/main' ? 'production-server' : env.GIT_BRANCH == 'origin/dev' ? 'test-dev-battle-server' : 'default-agent'}"
+                        env.LABEL = env.GIT_BRANCH == 'origin/main' ? 'production-server' : env.GIT_BRANCH == 'origin/dev' ? 'test-dev-battle-server' : 'default-agent'
+                        echo "Current agent: ${env.LABEL}"
                         echo "Selected agent: ${env.NODE_NAME}"
                         sh(script: "whoami && pwd && ls -la", label: "Environment Info")
                     } catch (Exception e) {
