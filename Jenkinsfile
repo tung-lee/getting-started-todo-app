@@ -7,7 +7,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        echo "Current branch: ${env.BRANCH_NAME}"
+                        echo "Current branch: ${env.GIT_BRANCH}"
                         echo "Selected agent: ${env.NODE_NAME}"
                         sh(script: "whoami && pwd && ls -la", label: "Environment Info")
                     } catch (Exception e) {
