@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label 'test-dev-battle-server'
-    }
+    agent none
     stages {
         stage('choose agent') {
             steps {
@@ -12,6 +10,21 @@ pipeline {
                         echo "Current agent: ${env.LABEL}"
                         echo "Selected agent: ${env.NODE_NAME}"
                         sh(script: "whoami && pwd && ls -la", label: "Environment Info")
+                    } catch (Exception e) {
+                        echo "An error occurred: ${e.message}"
+                    }
+                }
+            }
+        }
+
+        stage('build') {
+            agent {
+                label env.LABEL
+            }
+            steps {
+                script {
+                    try {
+                        sh("docker ps -a")
                     } catch (Exception e) {
                         echo "An error occurred: ${e.message}"
                     }
