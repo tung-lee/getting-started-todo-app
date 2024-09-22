@@ -4,16 +4,8 @@ pipeline {
     stages {
         stage('info') {
             agent {
-                label {
-                    // Choose agent based on branch name
-                    switch(env.BRANCH_NAME) {
-                        case 'main':
-                            return 'production-server'
-                        case 'dev':
-                            return 'test-dev-battle-server'
-                        default:
-                            return 'default-agent'
-                    }
+                node {
+                    label "${BRANCH_NAME == 'main' ? 'production-server' : BRANCH_NAME == 'dev' ? 'test-dev-battle-server' : 'default-agent'}"
                 }
             }
             steps {
