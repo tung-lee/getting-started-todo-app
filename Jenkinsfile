@@ -1,9 +1,11 @@
+def USED_LABEL = env.GIT_BRANCH == 'origin/main' ? 'production-server' : env.GIT_BRANCH == 'origin/dev' ? 'test-dev-battle-server' : 'default-agent'
+
 pipeline {
     agent none
     stages {
         stage('info') {
             agent {
-                label "${env.GIT_BRANCH == 'origin/main' ? 'production-server' : env.GIT_BRANCH == 'origin/dev' ? 'test-dev-battle-server' : 'default-agent'}"
+                label USED_LABEL
             }
             steps {
                 script {
